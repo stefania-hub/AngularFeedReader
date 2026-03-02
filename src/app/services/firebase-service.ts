@@ -4,17 +4,23 @@ import { FirebaseApp, initializeApp } from "firebase/app";
 @Injectable({
   providedIn: 'root',
 })
-export class FirebaseService {
-  
+export class FirebaseService {  
 
   firebaseConfig = {
-    apiKey: "AIzaSyAs-Ng4OHrHvjeLA1W3Z7Btl2ho4YHdXIA",
-    authDomain: "feed-reader-5e320.firebaseapp.com",
-    projectId: "feed-reader-5e320",
-    storageBucket: "feed-reader-5e320.firebasestorage.app",
-    messagingSenderId: "211840088399",
-    appId: "1:211840088399:web:c832cef1b9e3a5a48ced3a"
-  };
+
+  apiKey: "AIzaSyD9VRtu9voOWEMA5aM3gpvrqxzfvwzRfNc",
+
+  authDomain: "superfeed-d6d48.firebaseapp.com",
+
+  projectId: "superfeed-d6d48",
+
+  storageBucket: "superfeed-d6d48.firebasestorage.app",
+
+  messagingSenderId: "88199694199",
+
+  appId: "1:88199694199:web:aa0539efdf5da754c84372"
+
+};
 
   app: FirebaseApp;
 

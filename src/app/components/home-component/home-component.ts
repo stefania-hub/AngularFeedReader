@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
+import { FirestoreService } from '../../services/firestore-service';
+import { RssServices } from '../../services/rss-services';
 
 @Component({
   selector: 'app-home-component',
@@ -7,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './home-component.scss',
 })
 export class HomeComponent {
+ rssSer= inject(RssServices)
+
+ constructor() {
+  effect(() => {
+    this.rssSer.news()
+  } )
+ }
 
 }
