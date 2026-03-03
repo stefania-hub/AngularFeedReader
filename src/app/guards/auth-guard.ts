@@ -1,6 +1,7 @@
 import { effect, inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth-service';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const authServ = inject(AuthService);
@@ -10,13 +11,13 @@ export const authGuard: CanActivateFn = (route, state) => {
     // if (!authServ) {
     //   reject(false);
     // }
-    effect(() => {
-      if (authServ.isAuth()) {
-        resolve(true);
-      } else {
-        router.navigate(['/login'])
-        resolve(false);
-      }
-    })
-  })
-};
+       onAuthStateChanged(authServ.auth, (user) => {
+         if (user) {
+          resolve(true)
+         } else {
+           router.navigate(['/login'])
+           resolve(false)
+         }
+       });
+        })
+  };

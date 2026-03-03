@@ -1,3 +1,10 @@
 <div>
-    home works!
+    
+    @for (news of rssServ.news(); track $index) {
+        <div>
+            <h3>{{news.title}}</h3>
+            <p [innerHTML]="news.description"></p>
+            <a href="{{news.url}}" target="_blank">vai al sito</a>
+        </div>
+    }
 </div>

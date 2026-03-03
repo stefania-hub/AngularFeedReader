@@ -9,11 +9,11 @@ import { RssServices } from '../../services/rss-services';
   styleUrl: './home-component.scss',
 })
 export class HomeComponent {
- rssSer= inject(RssServices)
+ rssServ= inject(RssServices)
 
  constructor() {
   effect(() => {
-    this.rssSer.news()
+    this.rssServ.news()
   } )
  }
 
